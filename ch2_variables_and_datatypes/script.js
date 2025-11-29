@@ -1,4 +1,4 @@
-var firstname = "Najma";
+var firstName = "Najma";
 var salary = 200;
 var isMarried = false;
 // var tax = 30;
