@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Chooser</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+            background: #f0f0f0;
+        }
+
+        select {
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+            outline: none;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .mood-box {
+            margin-top: 25px;
+            padding: 25px 40px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            font-size: 24px;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pick Your Mood</h1>
+
+    <select id="moodSelect">
+        <option value="">-- Select mood --</option>
+        <option value="happy">😊 Happy</option>
+        <option value="sad">😢 Sad</option>
+        <option value="angry">😡 Angry</option>
+        <option value="relaxed">😌 Relaxed</option>
+    </select>
+
+    <div class="mood-box" id="moodBox">
+        Your mood will appear here...
+    </div>
+
+    <script>
+        const moodSelect = document.getElementById("moodSelect");
+        const moodBox = document.getElementById("moodBox");
+
+        moodSelect.addEventListener("change", function() {
+            let mood = moodSelect.value;
+
+            if (mood === "happy") {
+                document.body.style.background = "#ffe97a";
+                moodBox.innerHTML = "You feel Happy! 😊";
+            } 
+            else if (mood === "sad") {
+                document.body.style.background = "#9cc4ff";
+                moodBox.innerHTML = "You feel Sad 😢";
+            } 
+            else if (mood === "angry") {
+                document.body.style.background = "#ff8a8a";
+                moodBox.innerHTML = "You feel Angry 😡";
+            } 
+            else if (mood === "relaxed") {
+                document.body.style.background = "#b5f7c8";
+                moodBox.innerHTML = "You feel Relaxed 😌";
+            } 
+            else {
+                document.body.style.background = "#f0f0f0";
+                moodBox.innerHTML = "Your mood will appear here...";
+            }
+        });
+    </script>
+
+</body>
+</html>
