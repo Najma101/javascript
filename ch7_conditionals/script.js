@@ -19,7 +19,7 @@
 //   console.log("i am neither 5,6,7 or 8");
 // }
 
-let age = 8;
+let age = 9;
 
 switch (age) {
   case 5:
